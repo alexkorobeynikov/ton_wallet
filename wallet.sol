@@ -29,16 +29,16 @@ contract Wallet {
         _;
     }
 
-    function sendTransactionNoFee(address dest, uint128 value) public pure checkOwnerWallet {
+    function sendTransactionNoFee(address dest, uint128 value) public  checkOwnerWallet {
         dest.transfer(value, true, 64);
     }
 
-    function sendTransactionFee(address dest, uint128 value) public pure checkOwnerWallet {
+    function sendTransactionFee(address dest, uint128 value) public  checkOwnerWallet {
         dest.transfer(value, true, 0);
 
     }
 
-    function sendTransactionAndKill(address dest, uint128 value) public pure checkOwnerWallet {
+    function sendTransactionAndKill(address dest, uint128 value) public checkOwnerWallet {
         dest.transfer(value, true, 160);
 
     }
